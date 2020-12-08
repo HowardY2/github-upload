@@ -1,0 +1,57 @@
+<html>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>华中科技大学选课系统</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/register.css">
+
+    </head>
+
+    <body>
+
+        <div class="page-container" id="register">
+            <h1>华中科技大学选课系统</h1>
+                <input type="text" name="username" class="username" placeholder="用户名">
+                <input type="password" name="password" class="password"@keyup.enter="matchusename" placeholder="密码">
+                <button type="submit" class="submit_button" @click="matchusename">注册</button>
+                <!--div class="error"><span>+</span></div>-->
+           
+        </div>
+		
+        <!-- Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+              var app = new Vue({
+                el:"#register",
+                data:{
+                    isRepeat:true,
+                    registersucceedurl:""
+                },
+                methods: {
+                    matchusename:function(){
+                        if(!this.isRepeat)
+                            alert('该用户名已被使用！')
+                        else{
+                            this. registersucceedurl="./login.html"
+                            window.location.href=this.registersucceedurl
+                            }
+                        }
+                },
+              })
+            </script>
+
+    </body>
+<div style="text-align:center;">
+
+</div>
+</html>
+
